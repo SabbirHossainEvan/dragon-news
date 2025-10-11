@@ -1,7 +1,9 @@
 import { FaStar, FaEye, FaShareAlt, FaRegBookmark } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   const {
+    _id,
     title,
     rating,
     total_view,
@@ -28,10 +30,10 @@ const NewsCard = ({ news }) => {
             </p>
           </div>
         </div>
-        <button className="btn btn-ghost btn-sm text-gray-600">
-            <FaRegBookmark />
-          <FaShareAlt />
-        </button>
+        <div className="flex gap-2 text-gray-600">
+          <FaRegBookmark className="cursor-pointer hover:text-primary" />
+          <FaShareAlt className="cursor-pointer hover:text-primary" />
+        </div>
       </div>
 
       {/* Thumbnail */}
@@ -43,6 +45,14 @@ const NewsCard = ({ news }) => {
       <div className="card-body space-y-2">
         <h2 className="card-title text-lg font-bold">{title}</h2>
         <p className="text-sm text-gray-600 line-clamp-3">{details}</p>
+
+        {/* Read More */}
+        <Link
+          to={`/news/${_id}`}
+          className="text-primary text-sm font-semibold hover:underline"
+        >
+          Read More
+        </Link>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2">
@@ -74,3 +84,4 @@ const NewsCard = ({ news }) => {
 };
 
 export default NewsCard;
+
