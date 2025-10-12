@@ -47,10 +47,8 @@ const NewsCard = ({ news }) => {
         <p className="text-sm text-gray-600 line-clamp-3">{details}</p>
 
         {/* Read More */}
-        <Link
-          to={`/news/${_id}`}
-          className="text-primary text-sm font-semibold hover:underline"
-        >
+
+        <Link to={`/news-details/${news.id}`} className="text-blue-500 hover:underline">
           Read More
         </Link>
 
