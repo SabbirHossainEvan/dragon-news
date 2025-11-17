@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialLogin from './SocialLogin';
 import FindUs from './FindUs';
-import QZone from './Qzone';
+import QZone from './QZone';
 
 const RightAside = () => {
     return (
